@@ -58,7 +58,7 @@ function game() {
     } else if (result.includes("You Lose!")) {
       computerScore++;
     }
-    console.log(`Score:ROCK
+    console.log(`Score:
     Player Score: ${playerScore}
     Computer Score: ${computerScore}`);
   }
