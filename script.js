@@ -70,52 +70,38 @@ function updateUI(
   h2GameResult.innerHTML = gameResult;
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  const options = document.querySelectorAll(".option");
-  options.forEach((option) =>
-    option.addEventListener("click", () => {
-      // play round
-      const playerSelection = option.innerHTML;
-      const computerSelection = computerPlay();
-      const result = playRound(playerSelection, computerSelection);
-      if (result.includes("You Win!")) {
-        playerScore++;
-      } else if (result.includes("You Lose!")) {
-        computerScore++;
-      }
+let playerScore = 0;
+let computerScore = 0;
+const options = document.querySelectorAll(".option");
+options.forEach((option) =>
+  option.addEventListener("click", () => {
+    // play round
+    const playerSelection = option.innerHTML;
+    const computerSelection = computerPlay();
+    const result = playRound(playerSelection, computerSelection);
+    if (result.includes("You Win!")) {
+      playerScore++;
+    } else if (result.includes("You Lose!")) {
+      computerScore++;
+    }
 
-      // game result
-      let gameResult;
-      if (playerScore > computerScore) {
-        gameResult = "Player Wins!";
-      } else if (playerScore < computerScore) {
-        gameResult = "Computer Wins!";
-      } else {
-        gameResult = "Game is a Tie!";
-      }
+    // game result
+    let gameResult;
+    if (playerScore > computerScore) {
+      gameResult = "Player Wins!";
+    } else if (playerScore < computerScore) {
+      gameResult = "Computer Wins!";
+    } else {
+      gameResult = "Game is a Tie!";
+    }
 
-      updateUI(
-        playerSelection,
-        computerSelection,
-        result,
-        playerScore,
-        computerScore,
-        gameResult
-      );
-    })
-  );
-}
-
-// event listeners
-// const option = document.querySelectorAll(".option");
-// option.forEach((selection) =>
-//   selection.addEventListener("click", () => {
-//     console.log(selection.innerHTML.toLowerCase());
-//     const h2PlayerSelection = document.querySelector(".h2-selection");
-//     h2PlayerSelection.innerHTML = `Player Selection: ${selection.innerHTML}`;
-//   })
-// );
-
-game();
+    updateUI(
+      playerSelection,
+      computerSelection,
+      result,
+      playerScore,
+      computerScore,
+      gameResult
+    );
+  })
+);
