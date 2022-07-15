@@ -4,10 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="./script.js"></script>
+  <title>Rock Paper Scissors</title>
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  
+  <div style="display: flex; align-items: center; justify-content: center">
+    <div style="display: flex; justify-content: center; align-items:center; flex-direction: column; width: 1000px; height: 980px;">
+      <h1 style="font-style: italic;">Rock Paper Scissors</h1>
+      <div>
+        <button class="option">Rock</button>
+        <button class="option">Paper</button>
+        <button class="option">Scissors</button>
+      </div>
+      <div class="selection-container">
+        <h2 class="player-selection" style="text-align:center">Player Selection: </h1>
+        <h2 class="computer-selection" style="text-align:center">Computer: Selection: </h2>
+        <h2 class="result" style="text-align:center"></h2>
+      </div>
+      <div class="score-container">
+        <h2 class="player-score" style="text-align:center"></h2>
+        <h2 class="computer-score" style="text-align:center"></h2>
+        <h2 class="game-result" style="text-align:center"></h2>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p style="font-style: italic; text-align: center;">Rock Paper Scissors by <a href="https://github.com/thomasjuhoonkim">Thomas Kim</a></p>
+  </footer>
 </body>
 </html>
